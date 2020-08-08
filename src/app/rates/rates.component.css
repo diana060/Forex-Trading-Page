@@ -1,0 +1,54 @@
+.main-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.rate-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+::ng-deep .mat-form-field-infix .ng-tns-c38-0 {
+  color:rgb(11, 9, 88)!important;
+}
+
+::ng-deep .mat-form-field-wrapper .ng-tns-c38-0{
+  color:rgb(11, 9, 88)!important;
+}
+
+mat-form-field {
+  min-width: 300px;
+  margin: 20px;
+}
+
+.rate-value {
+  padding: 3px;
+  border-radius: 2px;
+  font-size: 1.2rem;
+}
+
+.valutes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+mat-card-title {
+  color: rgb(11, 9, 88);
+}
+
+mat-card-subtitle {
+  margin-bottom: none;
+}
+
+.is-raising {
+  background-color: rgba(0, 128, 0, 0.6);
+  color: white;
+}
+
+.is-falling {
+  background-color: rgba(255, 0, 0, 0.6);
+  color: white;
+}

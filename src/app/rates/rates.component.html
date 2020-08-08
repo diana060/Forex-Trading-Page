@@ -1,0 +1,27 @@
+<ng-template #loading>
+  <p>Loading...</p>
+</ng-template>
+
+<div *ngIf="currencies; else loading" class="main-wrapper">
+  <mat-form-field class="form-field">
+    <mat-label>Search</mat-label>
+    <input class="input" matInput [(ngModel)]="searchStr">
+      <button class="clear" mat-button matSuffix mat-icon-button aria-label="Clear" (click)="searchStr=''">
+        <mat-icon>close</mat-icon>
+      </button>
+  </mat-form-field>
+
+
+  <div *ngFor="let rate of currencies.rates | keyvalue | searchCurrency:searchStr:currencies.base" >
+    <mat-card class="rate-card">
+      <div class="valutes">
+        <mat-card-title>{{ currencies.base }}{{ rate.key }}</mat-card-title>
+        <!-- if there are not full name from the database -->
+        <mat-card-subtitle>EURO / {{ rate.key }} </mat-card-subtitle>
+      </div>
+      <div class="rate-value" [ngClass]="{'is-raising': isRaising === true, 'is-falling': isRaising === false}">
+        {{ rate.value | number:'1.4-4'}}
+      </div>
+    </mat-card>
+  </div>
+</div>
